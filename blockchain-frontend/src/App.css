@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.App {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #555;
+  margin-bottom: 10px;
+  text-align:center;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #1100ff;
+
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  color: #d9534f;
+  text-align: center;
+}
+
+.dashboard {
+  margin-top: 20px;
+}
+
+.dashboard button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dashboard button:hover {
+  background-color: #218838;
+}
+
+.input-group {
+  margin: 10px 0;
+}
+
+.input-group input {
+  margin-right: 10px;
+  width: calc(100% - 120px);
+}
+
+.input-group button {
+  width: 100px;
+}
+
+.data-display {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
