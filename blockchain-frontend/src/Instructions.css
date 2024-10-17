@@ -1,0 +1,192 @@
+/* Container styling for the instructions page */
+.instructions-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out; /* Page fade-in animation */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Heading styles */
+.instructions-container h1,
+.instructions-container h2,
+.instructions-container h3 {
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+/* Toggle section styling for collapsible sections */
+.toggle-section {
+  cursor: pointer;
+  color: #007bff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-section:hover {
+  color: #0056b3;
+  border-bottom: 1px solid #0056b3;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Chevron icon styles for expanded and collapsed sections */
+.toggle-section svg {
+  transition: transform 0.3s ease;
+}
+
+.toggle-section svg.down {
+  transform: rotate(0deg);
+}
+
+.toggle-section svg.right {
+  transform: rotate(90deg);
+}
+
+/* Paragraph and list styles */
+.instructions-container p {
+  color: #555555;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInText 0.8s forwards; /* Text fade-in animation */
+  animation-delay: 0.1s;
+}
+
+.instructions-container ul,
+.instructions-container ol {
+  margin-left: 20px;
+  color: #555555;
+  opacity: 0;
+  animation: fadeInText 0.8s forwards;
+  animation-delay: 0.1s;
+}
+
+.instructions-container li {
+  margin-bottom: 10px;
+}
+
+/* Code and pre block styling for displaying commands and code snippets */
+.instructions-container pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInText 0.8s forwards;
+  animation-delay: 0.1s;
+}
+
+.instructions-container code {
+  background-color: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for code blocks */
+.instructions-container pre:hover {
+  background-color: #eaeaea;
+}
+
+/* Link styling */
+.instructions-container a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.instructions-container a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Fade-in animation for text */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide down animation for sections */
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  to {
+    max-height: 1000px;
+    opacity: 1;
+    overflow: visible;
+  }
+}
+
+/* Slide up animation for collapsing sections */
+@keyframes slideUp {
+  from {
+    max-height: 1000px;
+    opacity: 1;
+    overflow: visible;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .instructions-container {
+    padding: 15px;
+  }
+
+  .instructions-container h1,
+  .instructions-container h2,
+  .instructions-container h3 {
+    font-size: 1.1em;
+  }
+
+  .toggle-section {
+    font-size: 1em;
+  }
+}
+
+/* Mobile screen optimizations */
+@media (max-width: 480px) {
+  .instructions-container {
+    padding: 10px;
+  }
+
+  .instructions-container h1 {
+    font-size: 1.8em;
+  }
+
+  .instructions-container h2 {
+    font-size: 1.3em;
+  }
+
+  .toggle-section {
+    font-size: 0.9em;
+  }
+
+  .instructions-container p,
+  .instructions-container ul,
+  .instructions-container ol {
+    font-size: 0.9em;
+  }
+}

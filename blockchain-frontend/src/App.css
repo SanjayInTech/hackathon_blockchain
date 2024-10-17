@@ -1,108 +1,214 @@
+/* General reset and font settings */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Container for the layout */
+.container {
+  width: 100%;
+  max-width: 800px; /* Max width for the container */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Container for the login section */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 20px auto; /* Center the login container */
+  text-align: left;
+}
+
+/* Layout for the dashboard */
+.dashboard-layout {
+  width: 100%;
+  max-width: 600px; /* Set max-width for dashboard */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 20px auto; /* Center the dashboard */
+}
+
+/* Title */
+.login-container h2, .dashboard-layout h1 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5); /* Light background for input fields */
+  color: #333; /* Dark text for input fields */
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Adding focus shadow */
+.input-field:focus {
+  outline: none;
+  box-shadow: 0 0 10px #007BFF;
+  background-color: rgba(255, 255, 255, 0.7); /* Darker background on focus */
+}
+
+/* Button styles */
+.action-button {
+  background-color: #FF4081; /* Pink color */
+  color: white;
+  padding: 10px 15px; /* Padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em; /* Font size */
+  width: 100%; /* Full width */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhanced button hover effect */
+.action-button:hover {
+  background-color: #e91e63; /* Darker pink on hover */
+  transform: translateY(-2px); /* Slightly elevates the button */
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.5); /* Add shadow on hover */
+}
+
+/* Navbar button styles */
+.nav-button {
+  background-color: #007BFF; /* Blue color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1em;
+}
+
+/* Enhanced hover effect for navbar buttons */
+.nav-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slightly elevates the button */
+}
+
+/* Logout button styling */
+.logout-button {
+  background-color: #dc3545; /* Red color */
+  color: white;
+  padding: 10px 15px; /* Padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em; /* Font size */
+  margin-top: 20px; /* Add margin for spacing */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhanced hover effect for logout button */
+.logout-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: translateY(-2px); /* Slightly elevates the button */
+}
+
+/* Spinner for loading state */
+.spinner {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.App {
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-h2 {
-  color: #555;
-  margin-bottom: 10px;
-  text-align:center;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #1100ff;
-
-  border: none;
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 0;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-p {
-  color: #d9534f;
-  text-align: center;
-}
-
-.dashboard {
-  margin-top: 20px;
-}
-
-.dashboard button {
-  background-color: #28a745;
-  border: none;
+.spinner p {
+  font-size: 1.5em;
   color: white;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
-.dashboard button:hover {
-  background-color: #218838;
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .login-container,
+  .dashboard-layout,
+  .container {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .action-button,
+  .nav-button,
+  .logout-button {
+    font-size: 1em;
+    padding: 10px 15px; /* Reduced padding for smaller screens */
+  }
+
+  h2, h1 {
+    font-size: 1.8em; /* Smaller font for smaller screens */
+  }
+
+  .input-field {
+    font-size: 14px; /* Smaller font for input fields */
+    padding: 12px; /* Adjust padding */
+  }
 }
 
-.input-group {
-  margin: 10px 0;
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  .login-container,
+  .dashboard-layout,
+  .container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .action-button,
+  .nav-button,
+  .logout-button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+
+  h2, h1 {
+    font-size: 1.5em; /* Smaller font */
+  }
+
+  .input-field {
+    font-size: 13px;
+    padding: 10px; /* Adjust padding */
+  }
 }
 
-.input-group input {
-  margin-right: 10px;
-  width: calc(100% - 120px);
+/* Transition effects */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
 }
 
-.input-group button {
-  width: 100px;
-}
-
-.data-display {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: #f9f9f9;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
